@@ -5,8 +5,9 @@
 body {
     font-family: Times, serif;
     background-color: #ff00ff;
-    margin: 0;
+    margin: 0 auto;  /* center of the page */
     padding: 0;
+    width: 50%;
 }
 
 .recipe-container {
@@ -18,7 +19,6 @@ body {
 
 .recipe-header {
     background-color: lime;
-    border: 3px dotted blue;
     text-align: center;
 }
 
@@ -30,9 +30,37 @@ body {
 
 .recipe-meta {
     background-color: orange;
-    border: 2px dashed purple;
+    /* border: 2px dashed purple; */
 }
 
+/* time bar setting */
+.time-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar {
+  flex: 1;
+  height: 6px;
+  background: #ddd;
+  border-radius: 999px;
+  position: relative
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 999px;
+}
+
+.time-start,
+.time-end {
+  font-size: 14px;
+}
+
+/* recipe description setting */
 .recipe-description {
     background-color: aqua;
     font-size: 8px;
@@ -41,7 +69,7 @@ body {
 
 .ingredients-section {
     background-color: pink;
-    border: 5px solid brown;
+    border: 3px solid brown;
 }
 
 .ingredients-list {
@@ -62,7 +90,7 @@ body {
 
 .instruction-step {
     background-color: beige;
-    border: 2px solid maroon;
+    border: 1px solid black;
     margin: 3px;
 }
 
@@ -81,4 +109,10 @@ body {
 * {
     margin: 2px;
     padding: 1px;
+}
+
+@media (max-width: 500px) {
+  .recipe-container {
+    width: 100%;
+  }
 }
